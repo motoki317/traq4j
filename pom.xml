@@ -261,4 +261,12 @@
         <junit-version>4.13</junit-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-motoki317-traq4j</id>
+            <name>motoki317-traq4j</name>
+            <url>https://api.bintray.com/maven/motoki317/traq4j/traq4j/;publish=1</url>
+        </repository>
+    </distributionManagement>
 </project>
