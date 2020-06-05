@@ -13,6 +13,8 @@
 
 package com.github.motoki317.traq4j;
 
+import java.io.IOException;
+
 import java.util.Map;
 import java.util.List;
 

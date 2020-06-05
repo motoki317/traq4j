@@ -14,23 +14,28 @@
 package com.github.motoki317.traq4j.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.github.motoki317.traq4j.model.BotState;
+import com.github.motoki317.traq4j.model.BotTokens;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 import org.threeten.bp.OffsetDateTime;
 
 /**
  * BOT詳細情報
  */
 @ApiModel(description = "BOT詳細情報")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T13:16:54.379Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T14:52:47.663Z[GMT]")
 public class BotDetail {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -50,7 +55,7 @@ public class BotDetail {
 
   public static final String SERIALIZED_NAME_SUBSCRIBE_EVENTS = "subscribeEvents";
   @SerializedName(SERIALIZED_NAME_SUBSCRIBE_EVENTS)
-  private List<String> subscribeEvents = new ArrayList<String>();
+  private List<String> subscribeEvents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DEVELOPER_ID = "developerId";
   @SerializedName(SERIALIZED_NAME_DEVELOPER_ID)
@@ -78,7 +83,7 @@ public class BotDetail {
 
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
-  private List<UUID> channels = new ArrayList<UUID>();
+  private List<UUID> channels = new ArrayList<>();
 
 
   public BotDetail id(UUID id) {

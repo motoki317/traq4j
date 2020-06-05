@@ -29,7 +29,7 @@ import java.util.Objects;
  * チャンネルイベント
  */
 @ApiModel(description = "チャンネルイベント")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T13:16:54.379Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T14:52:47.663Z[GMT]")
 public class ChannelEvent {
   /**
    * イベントタイプ
@@ -160,11 +160,9 @@ public class ChannelEvent {
    * @return detail OneOfTopicChangedEventSubscribersChangedEventPinAddedEventPinRemovedEventNameChangedEventParentChangedEventVisibilityChangedEventForcedNotificationChangedEventChildCreatedEvent
   **/
   @ApiModelProperty(required = true, value = "イベント内容")
-
   public Object getDetail() {
     return detail;
   }
-
 
   public void setDetail(Object detail) {
     this.detail = detail;

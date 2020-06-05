@@ -13,32 +13,12 @@
 
 package com.github.motoki317.traq4j.api;
 
-import com.github.motoki317.traq4j.ApiCallback;
-import com.github.motoki317.traq4j.ApiClient;
-import com.github.motoki317.traq4j.ApiException;
-import com.github.motoki317.traq4j.ApiResponse;
-import com.github.motoki317.traq4j.Configuration;
-import com.github.motoki317.traq4j.Pair;
-
+import com.github.motoki317.traq4j.*;
+import com.github.motoki317.traq4j.model.*;
 import com.google.gson.reflect.TypeToken;
 
-
-import com.github.motoki317.traq4j.model.ActiveOAuth2Token;
-import com.github.motoki317.traq4j.model.OAuth2Client;
-import com.github.motoki317.traq4j.model.OAuth2ClientDetail;
-import com.github.motoki317.traq4j.model.OAuth2Prompt;
-import com.github.motoki317.traq4j.model.OAuth2ResponseType;
-import com.github.motoki317.traq4j.model.OAuth2Token;
-import com.github.motoki317.traq4j.model.PatchClientRequest;
-import com.github.motoki317.traq4j.model.PostClientRequest;
-import com.github.motoki317.traq4j.model.PostOAuth2Revoke;
-import java.util.UUID;
-
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Oauth2Api {
     private ApiClient localVarApiClient;

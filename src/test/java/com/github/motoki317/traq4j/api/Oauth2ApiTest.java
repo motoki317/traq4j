@@ -14,20 +14,12 @@
 package com.github.motoki317.traq4j.api;
 
 import com.github.motoki317.traq4j.ApiException;
-import com.github.motoki317.traq4j.model.ActiveOAuth2Token;
-import com.github.motoki317.traq4j.model.OAuth2Client;
-import com.github.motoki317.traq4j.model.OAuth2ClientDetail;
-import com.github.motoki317.traq4j.model.OAuth2Prompt;
-import com.github.motoki317.traq4j.model.OAuth2ResponseType;
-import com.github.motoki317.traq4j.model.OAuth2Token;
-import com.github.motoki317.traq4j.model.PatchClientRequest;
-import com.github.motoki317.traq4j.model.PostClientRequest;
-import com.github.motoki317.traq4j.model.PostOAuth2Revoke;
-import java.util.UUID;
-import org.junit.Test;
+import com.github.motoki317.traq4j.model.*;
 import org.junit.Ignore;
+import org.junit.Test;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * API tests for Oauth2Api

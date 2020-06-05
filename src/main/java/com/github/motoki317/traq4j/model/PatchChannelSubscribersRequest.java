@@ -14,11 +14,15 @@
 package com.github.motoki317.traq4j.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -27,7 +31,7 @@ import java.util.UUID;
  * チャンネル購読者編集リクエスト
  */
 @ApiModel(description = "チャンネル購読者編集リクエスト")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T13:16:54.379Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T14:52:47.663Z[GMT]")
 public class PatchChannelSubscribersRequest {
   public static final String SERIALIZED_NAME_ON = "on";
   @SerializedName(SERIALIZED_NAME_ON)
@@ -46,7 +50,7 @@ public class PatchChannelSubscribersRequest {
 
   public PatchChannelSubscribersRequest addOnItem(UUID onItem) {
     if (this.on == null) {
-      this.on = new ArrayList<UUID>();
+      this.on = new ArrayList<>();
     }
     this.on.add(onItem);
     return this;
@@ -77,7 +81,7 @@ public class PatchChannelSubscribersRequest {
 
   public PatchChannelSubscribersRequest addOffItem(UUID offItem) {
     if (this.off == null) {
-      this.off = new ArrayList<UUID>();
+      this.off = new ArrayList<>();
     }
     this.off.add(offItem);
     return this;

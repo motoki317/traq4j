@@ -14,22 +14,26 @@
 package com.github.motoki317.traq4j.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.github.motoki317.traq4j.model.UserGroupMember;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 import org.threeten.bp.OffsetDateTime;
 
 /**
  * ユーザーグループ
  */
 @ApiModel(description = "ユーザーグループ")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T13:16:54.379Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T14:52:47.663Z[GMT]")
 public class UserGroup {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -49,7 +53,7 @@ public class UserGroup {
 
   public static final String SERIALIZED_NAME_MEMBERS = "members";
   @SerializedName(SERIALIZED_NAME_MEMBERS)
-  private List<UserGroupMember> members = new ArrayList<UserGroupMember>();
+  private List<UserGroupMember> members = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -61,7 +65,7 @@ public class UserGroup {
 
   public static final String SERIALIZED_NAME_ADMINS = "admins";
   @SerializedName(SERIALIZED_NAME_ADMINS)
-  private List<UUID> admins = new ArrayList<UUID>();
+  private List<UUID> admins = new ArrayList<>();
 
 
   public UserGroup id(UUID id) {

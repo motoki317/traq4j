@@ -14,11 +14,15 @@
 package com.github.motoki317.traq4j.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -27,11 +31,11 @@ import java.util.UUID;
  * 通知をオンにするユーザーのUUID配列
  */
 @ApiModel(description = "通知をオンにするユーザーのUUID配列")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T13:16:54.379Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T14:52:47.663Z[GMT]")
 public class PutChannelSubscribersRequest {
   public static final String SERIALIZED_NAME_ON = "on";
   @SerializedName(SERIALIZED_NAME_ON)
-  private List<UUID> on = new ArrayList<UUID>();
+  private List<UUID> on = new ArrayList<>();
 
 
   public PutChannelSubscribersRequest on(List<UUID> on) {

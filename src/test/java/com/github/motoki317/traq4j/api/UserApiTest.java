@@ -31,7 +31,10 @@ import com.github.motoki317.traq4j.model.UserTag;
 import org.junit.Test;
 import org.junit.Ignore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for UserApi

@@ -19,8 +19,12 @@ import com.github.motoki317.traq4j.ApiException;
 import com.github.motoki317.traq4j.ApiResponse;
 import com.github.motoki317.traq4j.Configuration;
 import com.github.motoki317.traq4j.Pair;
+import com.github.motoki317.traq4j.ProgressRequestBody;
+import com.github.motoki317.traq4j.ProgressResponseBody;
 
 import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
 
 
 import com.github.motoki317.traq4j.model.PatchUserTagRequest;

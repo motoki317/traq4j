@@ -13,7 +13,7 @@
 
 package com.github.motoki317.traq4j;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T13:16:54.379Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T14:52:47.663Z[GMT]")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

@@ -14,21 +14,13 @@
 package com.github.motoki317.traq4j.api;
 
 import com.github.motoki317.traq4j.ApiException;
-import com.github.motoki317.traq4j.model.Bot;
-import com.github.motoki317.traq4j.model.BotDetail;
-import com.github.motoki317.traq4j.model.BotEventLog;
-import com.github.motoki317.traq4j.model.BotTokens;
-import com.github.motoki317.traq4j.model.BotUser;
-import java.io.File;
-import com.github.motoki317.traq4j.model.PatchBotRequest;
-import com.github.motoki317.traq4j.model.PostBotActionJoinRequest;
-import com.github.motoki317.traq4j.model.PostBotActionLeaveRequest;
-import com.github.motoki317.traq4j.model.PostBotRequest;
-import java.util.UUID;
-import org.junit.Test;
+import com.github.motoki317.traq4j.model.*;
 import org.junit.Ignore;
+import org.junit.Test;
 
+import java.io.File;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * API tests for BotApi

@@ -14,11 +14,15 @@
 package com.github.motoki317.traq4j.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +32,7 @@ import java.util.UUID;
  * BOT情報変更リクエスト
  */
 @ApiModel(description = "BOT情報変更リクエスト")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T13:16:54.379Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T14:52:47.663Z[GMT]")
 public class PatchBotRequest {
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
@@ -178,7 +182,7 @@ public class PatchBotRequest {
 
   public PatchBotRequest addSubscribeEventsItem(String subscribeEventsItem) {
     if (this.subscribeEvents == null) {
-      this.subscribeEvents = new ArrayList<String>();
+      this.subscribeEvents = new ArrayList<>();
     }
     this.subscribeEvents.add(subscribeEventsItem);
     return this;

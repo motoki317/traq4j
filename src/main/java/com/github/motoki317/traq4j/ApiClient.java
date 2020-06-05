@@ -13,6 +13,7 @@
 
 package com.github.motoki317.traq4j;
 
+import com.github.motoki317.traq4j.auth.*;
 import okhttp3.*;
 import okhttp3.internal.http.HttpMethod;
 import okhttp3.internal.tls.OkHostnameVerifier;
@@ -20,10 +21,10 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
+import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
-import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
 
 import javax.net.ssl.*;
 import java.io.File;
@@ -46,13 +47,6 @@ import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.github.motoki317.traq4j.auth.Authentication;
-import com.github.motoki317.traq4j.auth.HttpBasicAuth;
-import com.github.motoki317.traq4j.auth.ApiKeyAuth;
-import com.github.motoki317.traq4j.auth.OAuth;
-import com.github.motoki317.traq4j.auth.RetryingOAuth;
-import com.github.motoki317.traq4j.auth.OAuthFlow;
 
 public class ApiClient {
 

@@ -14,11 +14,15 @@
 package com.github.motoki317.traq4j.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -27,7 +31,7 @@ import java.util.UUID;
  * 購読者変更イベント
  */
 @ApiModel(description = "購読者変更イベント")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T13:16:54.379Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T14:52:47.663Z[GMT]")
 public class SubscribersChangedEvent {
   public static final String SERIALIZED_NAME_USER_ID = "userId";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -35,11 +39,11 @@ public class SubscribersChangedEvent {
 
   public static final String SERIALIZED_NAME_ON = "on";
   @SerializedName(SERIALIZED_NAME_ON)
-  private List<UUID> on = new ArrayList<UUID>();
+  private List<UUID> on = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OFF = "off";
   @SerializedName(SERIALIZED_NAME_OFF)
-  private List<UUID> off = new ArrayList<UUID>();
+  private List<UUID> off = new ArrayList<>();
 
 
   public SubscribersChangedEvent userId(UUID userId) {
