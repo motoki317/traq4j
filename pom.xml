@@ -5,7 +5,7 @@
     <artifactId>traq4j</artifactId>
     <packaging>jar</packaging>
     <name>traq4j</name>
-    <version>3.0</version>
+    <version>3.0.0</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>traQ API Client for Java</description>
     <scm>
@@ -45,6 +45,8 @@
                         <arg>-Xlint:all</arg>
                         <arg>-J-Xss4m</arg><!-- Compiling the generated JSON.java file may require larger stack size. -->
                     </compilerArgs>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -248,7 +250,7 @@
         </dependency>
     </dependencies>
     <properties>
-        <java.version>1.7</java.version>
+        <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <gson-fire-version>1.8.4</gson-fire-version>

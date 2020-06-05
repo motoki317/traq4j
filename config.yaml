@@ -1,0 +1,6 @@
+groupId: com.github.motoki317
+artifactId: traq4j
+invokerPackage: com.github.motoki317.traq4j
+apiPackage: com.github.motoki317.traq4j.api
+modelPackage: com.github.motoki317.traq4j.model
+java8: true
