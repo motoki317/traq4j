@@ -13,23 +13,21 @@
 
 package com.github.motoki317.traq4j.model;
 
-import java.util.Objects;
-
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.threeten.bp.OffsetDateTime;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
-
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * 有効なOAuth2トークン情報
  */
 @ApiModel(description = "有効なOAuth2トークン情報")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T13:16:54.379Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-05T14:52:47.663Z[GMT]")
 public class ActiveOAuth2Token {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -41,7 +39,7 @@ public class ActiveOAuth2Token {
 
   public static final String SERIALIZED_NAME_SCOPES = "scopes";
   @SerializedName(SERIALIZED_NAME_SCOPES)
-  private List<OAuth2Scope> scopes = new ArrayList<OAuth2Scope>();
+  private List<OAuth2Scope> scopes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ISSUED_AT = "issuedAt";
   @SerializedName(SERIALIZED_NAME_ISSUED_AT)
