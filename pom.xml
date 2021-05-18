@@ -219,13 +219,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- HACK: one of the dependencies has non specified dependency of maven-project-info-reports-plugin
-                and 3.0 has breaking changes -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.9</version>
-            </plugin>
         </plugins>
     </build>
 
@@ -287,6 +280,13 @@
             <artifactId>junit</artifactId>
             <version>${junit-version}</version>
             <scope>test</scope>
+        </dependency>
+        <!-- HACK: one of the dependencies has non specified dependency of maven-project-info-reports-plugin
+            and 3.0 has breaking changes -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-project-info-reports-plugin</artifactId>
+            <version>2.9</version>
         </dependency>
     </dependencies>
 
