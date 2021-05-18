@@ -50,4 +50,12 @@ public class VersionFlagsTest {
         // TODO: test externalLogin
     }
 
+    /**
+     * Test the property 'signUpAllowed'
+     */
+    @Test
+    public void signUpAllowedTest() {
+        // TODO: test signUpAllowed
+    }
+
 }

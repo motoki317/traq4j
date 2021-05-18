@@ -20,7 +20,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 import org.junit.Assert;
@@ -29,33 +28,33 @@ import org.junit.Test;
 
 
 /**
- * Model tests for PostFileRequest
+ * Model tests for UserSettings
  */
-public class PostFileRequestTest {
-    private final PostFileRequest model = new PostFileRequest();
+public class UserSettingsTest {
+    private final UserSettings model = new UserSettings();
 
     /**
-     * Model tests for PostFileRequest
+     * Model tests for UserSettings
      */
     @Test
-    public void testPostFileRequest() {
-        // TODO: test PostFileRequest
+    public void testUserSettings() {
+        // TODO: test UserSettings
     }
 
     /**
-     * Test the property 'file'
+     * Test the property 'id'
      */
     @Test
-    public void fileTest() {
-        // TODO: test file
+    public void idTest() {
+        // TODO: test id
     }
 
     /**
-     * Test the property 'channelId'
+     * Test the property 'notifyCitation'
      */
     @Test
-    public void channelIdTest() {
-        // TODO: test channelId
+    public void notifyCitationTest() {
+        // TODO: test notifyCitation
     }
 
 }

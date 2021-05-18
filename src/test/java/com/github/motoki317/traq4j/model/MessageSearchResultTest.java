@@ -13,6 +13,7 @@
 
 package com.github.motoki317.traq4j.model;
 
+import com.github.motoki317.traq4j.model.Message;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,31 +22,41 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for OAuth2Decide
+ * Model tests for MessageSearchResult
  */
-public class OAuth2DecideTest {
-    private final OAuth2Decide model = new OAuth2Decide();
+public class MessageSearchResultTest {
+    private final MessageSearchResult model = new MessageSearchResult();
 
     /**
-     * Model tests for OAuth2Decide
+     * Model tests for MessageSearchResult
      */
     @Test
-    public void testOAuth2Decide() {
-        // TODO: test OAuth2Decide
+    public void testMessageSearchResult() {
+        // TODO: test MessageSearchResult
     }
 
     /**
-     * Test the property 'submit'
+     * Test the property 'totalHits'
      */
     @Test
-    public void submitTest() {
-        // TODO: test submit
+    public void totalHitsTest() {
+        // TODO: test totalHits
+    }
+
+    /**
+     * Test the property 'hits'
+     */
+    @Test
+    public void hitsTest() {
+        // TODO: test hits
     }
 
 }

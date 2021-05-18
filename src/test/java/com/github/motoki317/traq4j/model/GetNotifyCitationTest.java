@@ -20,7 +20,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.File;
 import java.io.IOException;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -28,25 +27,25 @@ import org.junit.Test;
 
 
 /**
- * Model tests for PutUserIconRequest
+ * Model tests for GetNotifyCitation
  */
-public class PutUserIconRequestTest {
-    private final PutUserIconRequest model = new PutUserIconRequest();
+public class GetNotifyCitationTest {
+    private final GetNotifyCitation model = new GetNotifyCitation();
 
     /**
-     * Model tests for PutUserIconRequest
+     * Model tests for GetNotifyCitation
      */
     @Test
-    public void testPutUserIconRequest() {
-        // TODO: test PutUserIconRequest
+    public void testGetNotifyCitation() {
+        // TODO: test GetNotifyCitation
     }
 
     /**
-     * Test the property 'file'
+     * Test the property 'notifyCitation'
      */
     @Test
-    public void fileTest() {
-        // TODO: test file
+    public void notifyCitationTest() {
+        // TODO: test notifyCitation
     }
 
 }

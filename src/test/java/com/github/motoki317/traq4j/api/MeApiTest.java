@@ -17,7 +17,9 @@ import com.github.motoki317.traq4j.ApiException;
 import com.github.motoki317.traq4j.model.ActiveOAuth2Token;
 import com.github.motoki317.traq4j.model.ExternalProviderUser;
 import java.io.File;
+import com.github.motoki317.traq4j.model.GetNotifyCitation;
 import com.github.motoki317.traq4j.model.LoginSession;
+import com.github.motoki317.traq4j.model.MyChannelViewState;
 import com.github.motoki317.traq4j.model.MyUserDetail;
 import com.github.motoki317.traq4j.model.PatchMeRequest;
 import com.github.motoki317.traq4j.model.PatchUserTagRequest;
@@ -28,9 +30,11 @@ import com.github.motoki317.traq4j.model.PostUnlinkExternalAccount;
 import com.github.motoki317.traq4j.model.PostUserTagRequest;
 import com.github.motoki317.traq4j.model.PutChannelSubscribeLevelRequest;
 import com.github.motoki317.traq4j.model.PutMyPasswordRequest;
+import com.github.motoki317.traq4j.model.PutNotifyCitationRequest;
 import com.github.motoki317.traq4j.model.StampHistoryEntry;
 import java.util.UUID;
 import com.github.motoki317.traq4j.model.UnreadChannel;
+import com.github.motoki317.traq4j.model.UserSettings;
 import com.github.motoki317.traq4j.model.UserSubscribeState;
 import com.github.motoki317.traq4j.model.UserTag;
 import org.junit.Test;
@@ -94,6 +98,22 @@ public class MeApiTest {
     public void changeMyIconTest() throws ApiException {
         File file = null;
         api.changeMyIcon(file);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * メッセージ引用通知の設定情報を変更
+     *
+     * メッセージ引用通知の設定情報を変更します
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void changeMyNotifyCitationTest() throws ApiException {
+        PutNotifyCitationRequest putNotifyCitationRequest = null;
+        api.changeMyNotifyCitation(putNotifyCitationRequest);
 
         // TODO: test validations
     }
@@ -208,6 +228,21 @@ public class MeApiTest {
     }
     
     /**
+     * メッセージ引用通知の設定情報を取得
+     *
+     * メッセージ引用通知の設定情報を変更します。
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getMyNotifyCitationTest() throws ApiException {
+        GetNotifyCitation response = api.getMyNotifyCitation();
+
+        // TODO: test validations
+    }
+    
+    /**
      * QRコードを取得
      *
      * 自身のQRコードを取得します。 返されたQRコードまたはトークンは、発行後の5分間のみ有効です
@@ -310,6 +345,36 @@ public class MeApiTest {
     @Test
     public void getMyUserTagsTest() throws ApiException {
         List<UserTag> response = api.getMyUserTags();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 自身のチャンネル閲覧状態一覧を取得
+     *
+     * 自身のチャンネル閲覧状態一覧を取得します。
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getMyViewStatesTest() throws ApiException {
+        List<MyChannelViewState> response = api.getMyViewStates();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * ユーザー設定を取得
+     *
+     * ユーザー設定を取得します。
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getUserSettingsTest() throws ApiException {
+        UserSettings response = api.getUserSettings();
 
         // TODO: test validations
     }

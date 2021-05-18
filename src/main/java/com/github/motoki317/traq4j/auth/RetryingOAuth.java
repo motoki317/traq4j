@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.List;
 
 public class RetryingOAuth extends OAuth implements Interceptor {
-    private OAuthClient oAuthClient;
+    private final OAuthClient oAuthClient;
 
     private TokenRequestBuilder tokenRequestBuilder;
 
@@ -36,12 +36,12 @@ public class RetryingOAuth extends OAuth implements Interceptor {
     }
 
     /**
-    @param tokenUrl The token URL to be used for this OAuth2 flow.
-        Applicable to the following OAuth2 flows: "password", "clientCredentials" and "authorizationCode".
-        The value must be an absolute URL.
-    @param clientId The OAuth2 client ID for the "clientCredentials" flow.
-    @param clientSecret The OAuth2 client secret for the "clientCredentials" flow.
-    */
+     * @param tokenUrl     The token URL to be used for this OAuth2 flow.
+     *                     Applicable to the following OAuth2 flows: "password", "clientCredentials" and "authorizationCode".
+     *                     The value must be an absolute URL.
+     * @param clientId     The OAuth2 client ID for the "clientCredentials" flow.
+     * @param clientSecret The OAuth2 client secret for the "clientCredentials" flow.
+     */
     public RetryingOAuth(
             String tokenUrl,
             String clientId,
@@ -61,7 +61,7 @@ public class RetryingOAuth extends OAuth implements Interceptor {
     }
 
     public void setFlow(OAuthFlow flow) {
-        switch(flow) {
+        switch (flow) {
             case accessCode:
                 tokenRequestBuilder.setGrantType(GrantType.AUTHORIZATION_CODE);
                 break;
@@ -124,8 +124,8 @@ public class RetryingOAuth extends OAuth implements Interceptor {
             // 401/403 response codes most likely indicate an expired access token, unless it happens two times in a row
             if (
                     response != null &&
-                            (   response.code() == HttpURLConnection.HTTP_UNAUTHORIZED ||
-                                    response.code() == HttpURLConnection.HTTP_FORBIDDEN     ) &&
+                            (response.code() == HttpURLConnection.HTTP_UNAUTHORIZED ||
+                                    response.code() == HttpURLConnection.HTTP_FORBIDDEN) &&
                             updateTokenAndRetryOnAuthorizationFailure
             ) {
                 try {
@@ -139,8 +139,7 @@ public class RetryingOAuth extends OAuth implements Interceptor {
                 }
             }
             return response;
-        }
-        else {
+        } else {
             return chain.proceed(chain.request());
         }
     }

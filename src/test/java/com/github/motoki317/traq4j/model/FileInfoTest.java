@@ -14,6 +14,7 @@
 package com.github.motoki317.traq4j.model;
 
 import com.github.motoki317.traq4j.model.FileInfoThumbnail;
+import com.github.motoki317.traq4j.model.ThumbnailInfo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,6 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import org.threeten.bp.OffsetDateTime;
 import org.junit.Assert;
@@ -84,11 +87,27 @@ public class FileInfoTest {
     }
 
     /**
+     * Test the property 'isAnimatedImage'
+     */
+    @Test
+    public void isAnimatedImageTest() {
+        // TODO: test isAnimatedImage
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test
     public void createdAtTest() {
         // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'thumbnails'
+     */
+    @Test
+    public void thumbnailsTest() {
+        // TODO: test thumbnails
     }
 
     /**

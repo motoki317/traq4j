@@ -17,6 +17,7 @@ import com.github.motoki317.traq4j.ApiException;
 import com.github.motoki317.traq4j.model.Message;
 import com.github.motoki317.traq4j.model.MessageClip;
 import com.github.motoki317.traq4j.model.MessagePin;
+import com.github.motoki317.traq4j.model.MessageSearchResult;
 import com.github.motoki317.traq4j.model.MessageStamp;
 import org.threeten.bp.OffsetDateTime;
 import com.github.motoki317.traq4j.model.PostMessageRequest;
@@ -277,6 +278,37 @@ public class MessageApiTest {
     public void removePinTest() throws ApiException {
         UUID messageId = null;
         api.removePin(messageId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * メッセージを検索
+     *
+     * メッセージを検索します。
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void searchMessagesTest() throws ApiException {
+        String word = null;
+        OffsetDateTime after = null;
+        OffsetDateTime before = null;
+        UUID in = null;
+        UUID to = null;
+        UUID from = null;
+        UUID citation = null;
+        Boolean bot = null;
+        Boolean hasURL = null;
+        Boolean hasAttachments = null;
+        Boolean hasImage = null;
+        Boolean hasVideo = null;
+        Boolean hasAudio = null;
+        Integer limit = null;
+        Integer offset = null;
+        String sort = null;
+        MessageSearchResult response = api.searchMessages(word, after, before, in, to, from, citation, bot, hasURL, hasAttachments, hasImage, hasVideo, hasAudio, limit, offset, sort);
 
         // TODO: test validations
     }

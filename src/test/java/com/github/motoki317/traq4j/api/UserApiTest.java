@@ -236,7 +236,7 @@ public class UserApiTest {
     /**
      * ユーザーのリストを取得
      *
-     * ユーザーのリストを取得します。 &#x60;include-suspended&#x60;を指定しない場合、レスポンスに非アクティブユーザーは含まれません。
+     * ユーザーのリストを取得します。 &#x60;include-suspended&#x60;を指定しない場合、レスポンスに非アクティブユーザーは含まれません。 &#x60;include-suspended&#x60;と&#x60;name&#x60;を同時に指定することはできません。
      *
      * @throws ApiException
      *          if the Api call fails
@@ -244,7 +244,8 @@ public class UserApiTest {
     @Test
     public void getUsersTest() throws ApiException {
         Boolean includeSuspended = null;
-        List<User> response = api.getUsers(includeSuspended);
+        String name = null;
+        List<User> response = api.getUsers(includeSuspended, name);
 
         // TODO: test validations
     }

@@ -17,6 +17,7 @@ import com.github.motoki317.traq4j.ApiException;
 import java.io.File;
 import com.github.motoki317.traq4j.model.FileInfo;
 import org.threeten.bp.OffsetDateTime;
+import com.github.motoki317.traq4j.model.ThumbnailType;
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -118,7 +119,8 @@ public class FileApiTest {
     @Test
     public void getThumbnailImageTest() throws ApiException {
         UUID fileId = null;
-        File response = api.getThumbnailImage(fileId);
+        ThumbnailType type = null;
+        File response = api.getThumbnailImage(fileId, type);
 
         // TODO: test validations
     }
@@ -134,7 +136,7 @@ public class FileApiTest {
     @Test
     public void postFileTest() throws ApiException {
         File file = null;
-        UUID channelId = null;
+        String channelId = null;
         FileInfo response = api.postFile(file, channelId);
 
         // TODO: test validations

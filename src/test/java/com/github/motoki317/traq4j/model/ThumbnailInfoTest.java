@@ -13,6 +13,7 @@
 
 package com.github.motoki317.traq4j.model;
 
+import com.github.motoki317.traq4j.model.ThumbnailType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.File;
 import java.io.IOException;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -28,33 +28,49 @@ import org.junit.Test;
 
 
 /**
- * Model tests for PostStampRequest
+ * Model tests for ThumbnailInfo
  */
-public class PostStampRequestTest {
-    private final PostStampRequest model = new PostStampRequest();
+public class ThumbnailInfoTest {
+    private final ThumbnailInfo model = new ThumbnailInfo();
 
     /**
-     * Model tests for PostStampRequest
+     * Model tests for ThumbnailInfo
      */
     @Test
-    public void testPostStampRequest() {
-        // TODO: test PostStampRequest
+    public void testThumbnailInfo() {
+        // TODO: test ThumbnailInfo
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'type'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
+    public void typeTest() {
+        // TODO: test type
     }
 
     /**
-     * Test the property 'file'
+     * Test the property 'mime'
      */
     @Test
-    public void fileTest() {
-        // TODO: test file
+    public void mimeTest() {
+        // TODO: test mime
+    }
+
+    /**
+     * Test the property 'width'
+     */
+    @Test
+    public void widthTest() {
+        // TODO: test width
+    }
+
+    /**
+     * Test the property 'height'
+     */
+    @Test
+    public void heightTest() {
+        // TODO: test height
     }
 
 }

@@ -1,32 +1,32 @@
 # traq4j
 
-[ ![Download](https://api.bintray.com/packages/motoki317/traq4j/traq4j/images/download.svg) ](https://bintray.com/motoki317/traq4j/traq4j/_latestVersion)
+[![GitHub release](https://img.shields.io/github/release/motoki317/traq4j.svg)](https://GitHub.com/motoki317/traq4j/releases/)
 
 traQ API client for Java
 
 Requires Java 8+
 
 ## Example usage
+
 ### pom.xml
 
-Make sure to use the latest version
+Make sure to use the latest version shown below.
 
-traq4j [ ![Download](https://api.bintray.com/packages/motoki317/traq4j/traq4j/images/download.svg) ](https://bintray.com/motoki317/traq4j/traq4j/_latestVersion)
+[![GitHub release](https://img.shields.io/github/release/motoki317/traq4j.svg)](https://GitHub.com/motoki317/traq4j/releases/)
 
 ```xml
 <project>
     <repositories>
         <repository>
-            <id>jcenter</id>
-            <name>jcenter-bintray</name>
-            <url>https://jcenter.bintray.com</url>
+            <id>GitHub</id>
+            <url>https://raw.github.com/motoki317/traq4j/mvn-repo/</url>
         </repository>
     </repositories>
     <dependencies>
         <dependency>
             <groupId>com.github.motoki317</groupId>
             <artifactId>traq4j</artifactId>
-            <version>3.0.0</version>
+            <version>${traq4j.version}</version>
         </dependency>
     </dependencies>
 </project>
@@ -56,3 +56,8 @@ public class Main {
     }
 }
 ```
+
+## Development
+
+1. `$ ./generate.sh`
+2. Reformat code (takes some time)
