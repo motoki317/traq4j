@@ -5,7 +5,7 @@
     <artifactId>traq4j</artifactId>
     <packaging>jar</packaging>
     <name>traq4j</name>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>traQ API Client for Java</description>
     <scm>
@@ -17,7 +17,7 @@
     <licenses>
         <license>
             <name>MIT License</name>
-            <url>https://github.com/traPtitech/traQ/blob/master/LICENSE</url>
+            <url>https://github.com/motoki317/traq4j/blob/master/LICENSE</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -27,13 +27,13 @@
             <name>OpenAPI-Generator Contributors</name>
             <email>team@openapitools.org</email>
             <organization>OpenAPITools.org</organization>
-            <organizationUrl>http://openapitools.org</organizationUrl>
+            <organizationUrl>https://openapitools.org</organizationUrl>
         </developer>
     </developers>
 
     <build>
         <plugins>
-           <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
@@ -171,6 +171,10 @@
                             <head>Http Response Details:</head>
                         </tag>
                     </tags>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <charset>UTF-8</charset>
+                    <source>8</source>
                 </configuration>
             </plugin>
             <plugin>
@@ -185,6 +189,42 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <!-- https://github.com/github/maven-plugins -->
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <configuration>
+                    <!-- Git commit message -->
+                    <message>Maven artifacts for ${project.version}</message>
+                    <noJekyll>true</noJekyll>
+
+                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                    <branch>refs/heads/mvn-repo</branch>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
+
+                    <repositoryName>traq4j</repositoryName>
+                    <repositoryOwner>motoki317</repositoryOwner>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- HACK: one of the dependencies has non specified dependency of maven-project-info-reports-plugin
+                and 3.0 has breaking changes -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.9</version>
             </plugin>
         </plugins>
     </build>
@@ -249,6 +289,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <properties>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -262,13 +303,15 @@
         <javax-annotation-version>1.3.2</javax-annotation-version>
         <junit-version>4.13.1</junit-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <github.global.server>github</github.global.server>
     </properties>
 
     <distributionManagement>
         <repository>
-            <id>bintray-motoki317-traq4j</id>
-            <name>motoki317-traq4j</name>
-            <url>https://api.bintray.com/maven/motoki317/traq4j/traq4j/;publish=1</url>
+            <id>internal.repos</id>
+            <name>GitHub Maven Repository</name>
+            <!-- Local target/mvn-repo -->
+            <url>file://${project.build.directory}/mvn-repo</url>
         </repository>
     </distributionManagement>
 </project>
