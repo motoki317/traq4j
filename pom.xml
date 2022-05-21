@@ -5,7 +5,7 @@
     <artifactId>traq4j</artifactId>
     <packaging>jar</packaging>
     <name>traq4j</name>
-    <version>3.1.0</version>
+    <version>3.2.0</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>traQ API Client for Java</description>
     <scm>
