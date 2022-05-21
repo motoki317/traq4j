@@ -13,6 +13,7 @@
 
 package com.github.motoki317.traq4j.model;
 
+import com.github.motoki317.traq4j.model.BotMode;
 import com.github.motoki317.traq4j.model.BotState;
 import com.github.motoki317.traq4j.model.BotTokens;
 import com.google.gson.TypeAdapter;
@@ -24,13 +25,12 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.net.URI;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import org.threeten.bp.OffsetDateTime;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -69,6 +69,14 @@ public class BotDetailTest {
     @Test
     public void createdAtTest() {
         // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'mode'
+     */
+    @Test
+    public void modeTest() {
+        // TODO: test mode
     }
 
     /**

@@ -16,13 +16,13 @@ package com.github.motoki317.traq4j.api;
 import com.github.motoki317.traq4j.ApiException;
 import java.io.File;
 import com.github.motoki317.traq4j.model.Message;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
 import com.github.motoki317.traq4j.model.PatchWebhookRequest;
 import com.github.motoki317.traq4j.model.PostWebhookRequest;
 import java.util.UUID;
 import com.github.motoki317.traq4j.model.Webhook;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,117 +32,103 @@ import java.util.Map;
 /**
  * API tests for WebhookApi
  */
-@Ignore
+@Disabled
 public class WebhookApiTest {
 
     private final WebhookApi api = new WebhookApi();
 
-    
     /**
      * Webhookのアイコンを変更
      *
      * 指定したWebhookのアイコン画像を変更します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void changeWebhookIconTest() throws ApiException {
         UUID webhookId = null;
-        File file = null;
-        api.changeWebhookIcon(webhookId, file);
-
+        File _file = null;
+        api.changeWebhookIcon(webhookId, _file);
         // TODO: test validations
     }
-    
+
     /**
      * Webhookを新規作成
      *
      * Webhookを新規作成します。 &#x60;secret&#x60;が空文字の場合、insecureウェブフックが作成されます。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createWebhookTest() throws ApiException {
         PostWebhookRequest postWebhookRequest = null;
         Webhook response = api.createWebhook(postWebhookRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * Webhookを削除
      *
      * 指定したWebhookを削除します。 Webhookによって投稿されたメッセージは削除されません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void deleteWebhookTest() throws ApiException {
         UUID webhookId = null;
         api.deleteWebhook(webhookId);
-
         // TODO: test validations
     }
-    
+
     /**
      * Webhook情報を変更
      *
      * 指定したWebhookの情報を変更します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editWebhookTest() throws ApiException {
         UUID webhookId = null;
         PatchWebhookRequest patchWebhookRequest = null;
-        Webhook response = api.editWebhook(webhookId, patchWebhookRequest);
-
+        api.editWebhook(webhookId, patchWebhookRequest);
         // TODO: test validations
     }
-    
+
     /**
      * Webhook情報を取得
      *
      * 指定したWebhookの詳細を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getWebhookTest() throws ApiException {
         UUID webhookId = null;
         Webhook response = api.getWebhook(webhookId);
-
         // TODO: test validations
     }
-    
+
     /**
      * Webhookのアイコンを取得
      *
      * 指定したWebhookのアイコン画像を取得します
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getWebhookIconTest() throws ApiException {
         UUID webhookId = null;
         File response = api.getWebhookIcon(webhookId);
-
         // TODO: test validations
     }
-    
+
     /**
      * Webhookの投稿メッセージのリストを取得
      *
      * 指定されたWebhookが投稿したメッセージのリストを返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getWebhookMessagesTest() throws ApiException {
@@ -154,33 +140,29 @@ public class WebhookApiTest {
         Boolean inclusive = null;
         String order = null;
         List<Message> response = api.getWebhookMessages(webhookId, limit, offset, since, until, inclusive, order);
-
         // TODO: test validations
     }
-    
+
     /**
      * Webhook情報のリストを取得します
      *
      * Webhookのリストを取得します。 allがtrueで無い場合は、自分がオーナーのWebhookのリストを返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getWebhooksTest() throws ApiException {
         Boolean all = null;
         List<Webhook> response = api.getWebhooks(all);
-
         // TODO: test validations
     }
-    
+
     /**
      * Webhookを送信
      *
      * Webhookにメッセージを投稿します。 secureなウェブフックに対しては&#x60;X-TRAQ-Signature&#x60;ヘッダーが必須です。 アーカイブされているチャンネルには投稿できません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void postWebhookTest() throws ApiException {
@@ -190,8 +172,7 @@ public class WebhookApiTest {
         Integer embed = null;
         String body = null;
         api.postWebhook(webhookId, xTRAQSignature, xTRAQChannelId, embed, body);
-
         // TODO: test validations
     }
-    
+
 }

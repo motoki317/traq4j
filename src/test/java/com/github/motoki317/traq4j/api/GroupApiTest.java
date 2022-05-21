@@ -14,6 +14,7 @@
 package com.github.motoki317.traq4j.api;
 
 import com.github.motoki317.traq4j.ApiException;
+import java.io.File;
 import com.github.motoki317.traq4j.model.PatchGroupMemberRequest;
 import com.github.motoki317.traq4j.model.PatchUserGroupRequest;
 import com.github.motoki317.traq4j.model.PostUserGroupAdminRequest;
@@ -21,8 +22,8 @@ import com.github.motoki317.traq4j.model.PostUserGroupRequest;
 import java.util.UUID;
 import com.github.motoki317.traq4j.model.UserGroup;
 import com.github.motoki317.traq4j.model.UserGroupMember;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,102 +33,105 @@ import java.util.Map;
 /**
  * API tests for GroupApi
  */
-@Ignore
+@Disabled
 public class GroupApiTest {
 
     private final GroupApi api = new GroupApi();
 
-    
     /**
      * グループ管理者を追加
      *
      * 指定したグループに管理者を追加します。 対象のユーザーグループの管理者権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void addUserGroupAdminTest() throws ApiException {
         UUID groupId = null;
         PostUserGroupAdminRequest postUserGroupAdminRequest = null;
         api.addUserGroupAdmin(groupId, postUserGroupAdminRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * グループメンバーを追加
      *
      * 指定したグループにメンバーを追加します。 対象のユーザーグループの管理者権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void addUserGroupMemberTest() throws ApiException {
         UUID groupId = null;
         UserGroupMember userGroupMember = null;
         api.addUserGroupMember(groupId, userGroupMember);
-
         // TODO: test validations
     }
-    
+
+    /**
+     * ユーザーグループのアイコンを変更
+     *
+     * ユーザーグループのアイコンを変更します。 対象のユーザーグループの管理者権限が必要です。
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void changeUserGroupIconTest() throws ApiException {
+        UUID groupId = null;
+        File _file = null;
+        api.changeUserGroupIcon(groupId, _file);
+        // TODO: test validations
+    }
+
     /**
      * ユーザーグループを作成
      *
      * ユーザーグループを作成します。 作成者は自動的にグループ管理者になります。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createUserGroupTest() throws ApiException {
         PostUserGroupRequest postUserGroupRequest = null;
         UserGroup response = api.createUserGroup(postUserGroupRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーグループを削除
      *
      * 指定したユーザーグループを削除します。 対象のユーザーグループの管理者権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void deleteUserGroupTest() throws ApiException {
         UUID groupId = null;
         api.deleteUserGroup(groupId);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーグループを編集
      *
      * 指定したユーザーグループの情報を編集します。 対象のユーザーグループの管理者権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editUserGroupTest() throws ApiException {
         UUID groupId = null;
         PatchUserGroupRequest patchUserGroupRequest = null;
         api.editUserGroup(groupId, patchUserGroupRequest);
-
         // TODO: test validations
     }
-    
+
     /**
-     * ユーザーグループメンバーを編集
+     * グループメンバーを編集
      *
      * 指定したユーザーグループ内の指定したユーザーの属性を編集します。 対象のユーザーグループの管理者権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editUserGroupMemberTest() throws ApiException {
@@ -135,105 +139,92 @@ public class GroupApiTest {
         UUID userId = null;
         PatchGroupMemberRequest patchGroupMemberRequest = null;
         api.editUserGroupMember(groupId, userId, patchGroupMemberRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーグループを取得
      *
      * 指定したユーザーグループの情報を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUserGroupTest() throws ApiException {
         UUID groupId = null;
         UserGroup response = api.getUserGroup(groupId);
-
         // TODO: test validations
     }
-    
+
     /**
      * グループ管理者を取得
      *
      * 指定したグループの管理者のリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUserGroupAdminsTest() throws ApiException {
         UUID groupId = null;
         List<UUID> response = api.getUserGroupAdmins(groupId);
-
         // TODO: test validations
     }
-    
+
     /**
      * グループメンバーを取得
      *
      * 指定したグループのメンバーのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUserGroupMembersTest() throws ApiException {
         UUID groupId = null;
         List<UserGroupMember> response = api.getUserGroupMembers(groupId);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーグループのリストを取得
      *
      * ユーザーグループのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUserGroupsTest() throws ApiException {
         List<UserGroup> response = api.getUserGroups();
-
         // TODO: test validations
     }
-    
+
     /**
      * グループ管理者を削除
      *
      * 指定したユーザーグループから指定した管理者を削除します。 対象のユーザーグループの管理者権限が必要です。 グループから管理者が存在しなくなる場合は400エラーを返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void removeUserGroupAdminTest() throws ApiException {
         UUID groupId = null;
         UUID userId = null;
         api.removeUserGroupAdmin(groupId, userId);
-
         // TODO: test validations
     }
-    
+
     /**
-     * ユーザーグループから削除
+     * グループメンバーを削除
      *
-     * 指定したユーザーグループから指定したユーザーを削除します。 対象のユーザーグループの管理者権限が必要です。
+     * 指定したユーザーグループから指定したユーザーを削除します。 既にグループから削除されているメンバーを指定した場合は204を返します。 対象のユーザーグループの管理者権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void removeUserGroupMemberTest() throws ApiException {
         UUID groupId = null;
         UUID userId = null;
         api.removeUserGroupMember(groupId, userId);
-
         // TODO: test validations
     }
-    
+
 }

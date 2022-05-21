@@ -13,7 +13,7 @@
 
 package com.github.motoki317.traq4j.model;
 
-import com.github.motoki317.traq4j.model.WebRTCUserStateSessions;
+import com.github.motoki317.traq4j.model.WebRTCUserStateSessionsInner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,9 +25,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

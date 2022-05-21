@@ -23,9 +23,10 @@ import com.github.motoki317.traq4j.model.PostStampPaletteRequest;
 import com.github.motoki317.traq4j.model.Stamp;
 import com.github.motoki317.traq4j.model.StampHistoryEntry;
 import com.github.motoki317.traq4j.model.StampPalette;
+import com.github.motoki317.traq4j.model.StampStats;
 import java.util.UUID;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,19 +36,17 @@ import java.util.Map;
 /**
  * API tests for StampApi
  */
-@Ignore
+@Disabled
 public class StampApiTest {
 
     private final StampApi api = new StampApi();
 
-    
     /**
      * スタンプを押す
      *
      * 指定したメッセージに指定したスタンプを押します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void addMessageStampTest() throws ApiException {
@@ -55,252 +54,236 @@ public class StampApiTest {
         UUID stampId = null;
         PostMessageStampRequest postMessageStampRequest = null;
         api.addMessageStamp(messageId, stampId, postMessageStampRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプ画像を変更
      *
      * 指定したスタンプの画像を変更します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void changeStampImageTest() throws ApiException {
         UUID stampId = null;
-        File file = null;
-        api.changeStampImage(stampId, file);
-
+        File _file = null;
+        api.changeStampImage(stampId, _file);
         // TODO: test validations
     }
-    
+
     /**
      * スタンプを作成
      *
      * スタンプを新規作成します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createStampTest() throws ApiException {
         String name = null;
-        File file = null;
-        Stamp response = api.createStamp(name, file);
-
+        File _file = null;
+        Stamp response = api.createStamp(name, _file);
         // TODO: test validations
     }
-    
+
     /**
      * スタンプパレットを作成
      *
      * スタンプパレットを作成します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createStampPaletteTest() throws ApiException {
         PostStampPaletteRequest postStampPaletteRequest = null;
         StampPalette response = api.createStampPalette(postStampPaletteRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプを削除
      *
      * 指定したスタンプを削除します。 対象のスタンプの削除権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void deleteStampTest() throws ApiException {
         UUID stampId = null;
         api.deleteStamp(stampId);
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプパレットを削除
      *
      * 指定したスタンプパレットを削除します。 対象のスタンプパレットの管理権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void deleteStampPaletteTest() throws ApiException {
         UUID paletteId = null;
         api.deleteStampPalette(paletteId);
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプ情報を変更
      *
      * 指定したスタンプの情報を変更します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editStampTest() throws ApiException {
         UUID stampId = null;
         PatchStampRequest patchStampRequest = null;
         api.editStamp(stampId, patchStampRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプパレットを編集
      *
      * 指定したスタンプパレットを編集します。 リクエストのスタンプの配列の順番は保存されて変更されます。 対象のスタンプパレットの管理権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editStampPaletteTest() throws ApiException {
         UUID paletteId = null;
         PatchStampPaletteRequest patchStampPaletteRequest = null;
         api.editStampPalette(paletteId, patchStampPaletteRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * メッセージのスタンプリストを取得
      *
      * 指定したメッセージに押されているスタンプのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMessageStampsTest() throws ApiException {
         UUID messageId = null;
         List<MessageStamp> response = api.getMessageStamps(messageId);
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプ履歴を取得
      *
      * 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyStampHistoryTest() throws ApiException {
         Integer limit = null;
         List<StampHistoryEntry> response = api.getMyStampHistory(limit);
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプ情報を取得
      *
      * 指定したスタンプの情報を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getStampTest() throws ApiException {
         UUID stampId = null;
         Stamp response = api.getStamp(stampId);
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプ画像を取得
      *
      * 指定したIDのスタンプ画像を返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getStampImageTest() throws ApiException {
         UUID stampId = null;
         File response = api.getStampImage(stampId);
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプパレットを取得
      *
      * 指定したスタンプパレットの情報を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getStampPaletteTest() throws ApiException {
         UUID paletteId = null;
         StampPalette response = api.getStampPalette(paletteId);
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプパレットのリストを取得
      *
      * 自身が所有しているスタンプパレットのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getStampPalettesTest() throws ApiException {
         List<StampPalette> response = api.getStampPalettes();
-
         // TODO: test validations
     }
-    
+
+    /**
+     * スタンプ統計情報を取得
+     *
+     * 指定したスタンプの統計情報を取得します。
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getStampStatsTest() throws ApiException {
+        UUID stampId = null;
+        StampStats response = api.getStampStats(stampId);
+        // TODO: test validations
+    }
+
     /**
      * スタンプリストを取得
      *
      * スタンプのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getStampsTest() throws ApiException {
         Boolean includeUnicode = null;
-        List<Stamp> response = api.getStamps(includeUnicode);
-
+        String type = null;
+        List<Stamp> response = api.getStamps(includeUnicode, type);
         // TODO: test validations
     }
-    
+
     /**
      * スタンプを消す
      *
      * 指定したメッセージから指定した自身が押したスタンプを削除します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void removeMessageStampTest() throws ApiException {
         UUID messageId = null;
         UUID stampId = null;
         api.removeMessageStamp(messageId, stampId);
-
         // TODO: test validations
     }
-    
+
 }

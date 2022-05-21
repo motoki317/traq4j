@@ -13,6 +13,7 @@
 
 package com.github.motoki317.traq4j.model;
 
+import com.github.motoki317.traq4j.model.BotEventResult;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,11 +22,10 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.UUID;
-import org.threeten.bp.OffsetDateTime;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -64,6 +64,14 @@ public class BotEventLogTest {
     @Test
     public void eventTest() {
         // TODO: test event
+    }
+
+    /**
+     * Test the property 'result'
+     */
+    @Test
+    public void resultTest() {
+        // TODO: test result
     }
 
     /**

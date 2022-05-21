@@ -17,8 +17,8 @@ import com.github.motoki317.traq4j.ApiException;
 import com.github.motoki317.traq4j.model.MessagePin;
 import com.github.motoki317.traq4j.model.Pin;
 import java.util.UUID;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,74 +28,65 @@ import java.util.Map;
 /**
  * API tests for PinApi
  */
-@Ignore
+@Disabled
 public class PinApiTest {
 
     private final PinApi api = new PinApi();
 
-    
     /**
      * ピン留めする
      *
-     * 指定したメッセージをピン留めします。
+     * 指定したメッセージをピン留めします。 アーカイブされているチャンネルのメッセージ・存在しないメッセージ・チャンネル当たりの上限数を超えたメッセージのピン留めはできません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createPinTest() throws ApiException {
         UUID messageId = null;
         MessagePin response = api.createPin(messageId);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルピンのリストを取得
      *
      * 指定したチャンネルにピン留めされているピンメッセージのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getChannelPinsTest() throws ApiException {
         UUID channelId = null;
         List<Pin> response = api.getChannelPins(channelId);
-
         // TODO: test validations
     }
-    
+
     /**
      * ピン留めを取得
      *
      * 指定したメッセージのピン留め情報を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getPinTest() throws ApiException {
         UUID messageId = null;
         MessagePin response = api.getPin(messageId);
-
         // TODO: test validations
     }
-    
+
     /**
      * ピン留めを外す
      *
      * 指定したメッセージのピン留めを外します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void removePinTest() throws ApiException {
         UUID messageId = null;
         api.removePin(messageId);
-
         // TODO: test validations
     }
-    
+
 }

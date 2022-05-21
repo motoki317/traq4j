@@ -16,8 +16,8 @@ package com.github.motoki317.traq4j.api;
 import com.github.motoki317.traq4j.ApiException;
 import com.github.motoki317.traq4j.model.PostStarRequest;
 import java.util.UUID;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,57 +27,50 @@ import java.util.Map;
 /**
  * API tests for StarApi
  */
-@Ignore
+@Disabled
 public class StarApiTest {
 
     private final StarApi api = new StarApi();
 
-    
     /**
      * チャンネルをスターに追加
      *
-     * 指定したチャンネルをスターチャンネルに追加します。 不正なチャンネルIDを指定した場合、400を返します。
+     * 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void addMyStarTest() throws ApiException {
         PostStarRequest postStarRequest = null;
         api.addMyStar(postStarRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * スターチャンネルリストを取得
      *
      * 自分がスターしているチャンネルのUUIDの配列を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyStarsTest() throws ApiException {
         List<UUID> response = api.getMyStars();
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルをスターから削除します
      *
      * 既にスターから削除されているチャンネルを指定した場合は204を返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void removeMyStarTest() throws ApiException {
         UUID channelId = null;
         api.removeMyStar(channelId);
-
         // TODO: test validations
     }
-    
+
 }

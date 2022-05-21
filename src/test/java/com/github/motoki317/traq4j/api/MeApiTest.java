@@ -37,8 +37,8 @@ import com.github.motoki317.traq4j.model.UnreadChannel;
 import com.github.motoki317.traq4j.model.UserSettings;
 import com.github.motoki317.traq4j.model.UserSubscribeState;
 import com.github.motoki317.traq4j.model.UserTag;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,480 +48,419 @@ import java.util.Map;
 /**
  * API tests for MeApi
  */
-@Ignore
+@Disabled
 public class MeApiTest {
 
     private final MeApi api = new MeApi();
 
-    
     /**
      * チャンネルをスターに追加
      *
-     * 指定したチャンネルをスターチャンネルに追加します。 不正なチャンネルIDを指定した場合、400を返します。
+     * 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void addMyStarTest() throws ApiException {
         PostStarRequest postStarRequest = null;
         api.addMyStar(postStarRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分にタグを追加
      *
      * 自分に新しくタグを追加します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void addMyUserTagTest() throws ApiException {
         PostUserTagRequest postUserTagRequest = null;
         UserTag response = api.addMyUserTag(postUserTagRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分のアイコン画像を変更
      *
      * 自分のアイコン画像を変更します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void changeMyIconTest() throws ApiException {
-        File file = null;
-        api.changeMyIcon(file);
-
+        File _file = null;
+        api.changeMyIcon(_file);
         // TODO: test validations
     }
-    
+
     /**
      * メッセージ引用通知の設定情報を変更
      *
      * メッセージ引用通知の設定情報を変更します
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void changeMyNotifyCitationTest() throws ApiException {
         PutNotifyCitationRequest putNotifyCitationRequest = null;
         api.changeMyNotifyCitation(putNotifyCitationRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分のパスワードを変更
      *
      * 自身のパスワードを変更します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void changeMyPasswordTest() throws ApiException {
         PutMyPasswordRequest putMyPasswordRequest = null;
         api.changeMyPassword(putMyPasswordRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分のユーザー情報を変更
      *
      * 自身のユーザー情報を変更します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editMeTest() throws ApiException {
         PatchMeRequest patchMeRequest = null;
         api.editMe(patchMeRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分のタグを編集
      *
      * 自分の指定したタグの状態を変更します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editMyUserTagTest() throws ApiException {
         UUID tagId = null;
         PatchUserTagRequest patchUserTagRequest = null;
         api.editMyUserTag(tagId, patchUserTagRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分のユーザー詳細を取得
      *
      * 自身のユーザー詳細情報を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMeTest() throws ApiException {
         MyUserDetail response = api.getMe();
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分のチャンネル購読状態を取得
      *
      * 自身のチャンネル購読状態を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyChannelSubscriptionsTest() throws ApiException {
         List<UserSubscribeState> response = api.getMyChannelSubscriptions();
-
         // TODO: test validations
     }
-    
+
     /**
      * 外部ログインアカウント一覧を取得
      *
      * 自分に紐付けられている外部ログインアカウント一覧を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyExternalAccountsTest() throws ApiException {
         List<ExternalProviderUser> response = api.getMyExternalAccounts();
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分のアイコン画像を取得
      *
      * 自分のアイコン画像を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyIconTest() throws ApiException {
         File response = api.getMyIcon();
-
         // TODO: test validations
     }
-    
+
     /**
      * メッセージ引用通知の設定情報を取得
      *
      * メッセージ引用通知の設定情報を変更します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyNotifyCitationTest() throws ApiException {
         GetNotifyCitation response = api.getMyNotifyCitation();
-
         // TODO: test validations
     }
-    
+
     /**
      * QRコードを取得
      *
      * 自身のQRコードを取得します。 返されたQRコードまたはトークンは、発行後の5分間のみ有効です
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyQRCodeTest() throws ApiException {
         Boolean token = null;
         File response = api.getMyQRCode(token);
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分のログインセッションリストを取得
      *
      * 自分のログインセッションのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMySessionsTest() throws ApiException {
         List<LoginSession> response = api.getMySessions();
-
         // TODO: test validations
     }
-    
+
     /**
      * スタンプ履歴を取得
      *
      * 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyStampHistoryTest() throws ApiException {
         Integer limit = null;
         List<StampHistoryEntry> response = api.getMyStampHistory(limit);
-
         // TODO: test validations
     }
-    
+
     /**
      * スターチャンネルリストを取得
      *
      * 自分がスターしているチャンネルのUUIDの配列を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyStarsTest() throws ApiException {
         List<UUID> response = api.getMyStars();
-
         // TODO: test validations
     }
-    
+
     /**
      * 有効トークンのリストを取得
      *
      * 有効な自分に発行されたOAuth2トークンのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyTokensTest() throws ApiException {
         List<ActiveOAuth2Token> response = api.getMyTokens();
-
         // TODO: test validations
     }
-    
+
     /**
      * 未読チャンネルを取得
      *
      * 自分が現在未読のチャンネルの未読情報を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyUnreadChannelsTest() throws ApiException {
         List<UnreadChannel> response = api.getMyUnreadChannels();
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分のタグリストを取得
      *
      * 自分に付けられているタグの配列を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyUserTagsTest() throws ApiException {
         List<UserTag> response = api.getMyUserTags();
-
         // TODO: test validations
     }
-    
+
     /**
      * 自身のチャンネル閲覧状態一覧を取得
      *
      * 自身のチャンネル閲覧状態一覧を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyViewStatesTest() throws ApiException {
         List<MyChannelViewState> response = api.getMyViewStates();
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザー設定を取得
      *
      * ユーザー設定を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUserSettingsTest() throws ApiException {
         UserSettings response = api.getUserSettings();
-
         // TODO: test validations
     }
-    
+
     /**
      * 外部ログインアカウントを紐付ける
      *
      * 自分に外部ログインアカウントを紐付けます。 指定した&#x60;providerName&#x60;がサーバー側で有効である必要があります。 リクエストが受理された場合、外部サービスの認証画面にリダイレクトされ、認証される必要があります。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void linkExternalAccountTest() throws ApiException {
         PostLinkExternalAccount postLinkExternalAccount = null;
         api.linkExternalAccount(postLinkExternalAccount);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルを既読にする
      *
      * 自分が未読のチャンネルを既読にします。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void readChannelTest() throws ApiException {
         UUID channelId = null;
         api.readChannel(channelId);
-
         // TODO: test validations
     }
-    
+
     /**
      * FCMデバイスを登録
      *
      * 自身のFCMデバイスを登録します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void registerFCMDeviceTest() throws ApiException {
         PostMyFCMDeviceRequest postMyFCMDeviceRequest = null;
         api.registerFCMDevice(postMyFCMDeviceRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルをスターから削除します
      *
      * 既にスターから削除されているチャンネルを指定した場合は204を返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void removeMyStarTest() throws ApiException {
         UUID channelId = null;
         api.removeMyStar(channelId);
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分からタグを削除します
      *
      * 既に存在しないタグを削除しようとした場合は204を返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void removeMyUserTagTest() throws ApiException {
         UUID tagId = null;
         api.removeMyUserTag(tagId);
-
         // TODO: test validations
     }
-    
+
     /**
      * セッションを無効化
      *
      * 指定した自分のセッションを無効化(ログアウト)します。 既に存在しない・無効化されているセッションを指定した場合も&#x60;204&#x60;を返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void revokeMySessionTest() throws ApiException {
         UUID sessionId = null;
         api.revokeMySession(sessionId);
-
         // TODO: test validations
     }
-    
+
     /**
      * トークンの認可を取り消す
      *
      * 自分の指定したトークンの認可を取り消します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void revokeMyTokenTest() throws ApiException {
         UUID tokenId = null;
         api.revokeMyToken(tokenId);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネル購読レベルを設定
      *
      * 自身の指定したチャンネルの購読レベルを設定します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void setChannelSubscribeLevelTest() throws ApiException {
         UUID channelId = null;
         PutChannelSubscribeLevelRequest putChannelSubscribeLevelRequest = null;
         api.setChannelSubscribeLevel(channelId, putChannelSubscribeLevelRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * 外部ログインアカウントの紐付けを解除
      *
      * 自分に紐付けられている外部ログインアカウントの紐付けを解除します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void unlinkExternalAccountTest() throws ApiException {
         PostUnlinkExternalAccount postUnlinkExternalAccount = null;
         api.unlinkExternalAccount(postUnlinkExternalAccount);
-
         // TODO: test validations
     }
-    
+
 }

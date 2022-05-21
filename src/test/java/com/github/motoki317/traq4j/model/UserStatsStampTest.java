@@ -21,39 +21,47 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import java.util.UUID;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
- * Model tests for WebRTCUserStateSessions
+ * Model tests for UserStatsStamp
  */
-public class WebRTCUserStateSessionsTest {
-    private final WebRTCUserStateSessions model = new WebRTCUserStateSessions();
+public class UserStatsStampTest {
+    private final UserStatsStamp model = new UserStatsStamp();
 
     /**
-     * Model tests for WebRTCUserStateSessions
+     * Model tests for UserStatsStamp
      */
     @Test
-    public void testWebRTCUserStateSessions() {
-        // TODO: test WebRTCUserStateSessions
+    public void testUserStatsStamp() {
+        // TODO: test UserStatsStamp
     }
 
     /**
-     * Test the property 'state'
+     * Test the property 'id'
      */
     @Test
-    public void stateTest() {
-        // TODO: test state
+    public void idTest() {
+        // TODO: test id
     }
 
     /**
-     * Test the property 'sessionId'
+     * Test the property 'count'
      */
     @Test
-    public void sessionIdTest() {
-        // TODO: test sessionId
+    public void countTest() {
+        // TODO: test count
+    }
+
+    /**
+     * Test the property 'total'
+     */
+    @Test
+    public void totalTest() {
+        // TODO: test total
     }
 
 }

@@ -23,7 +23,7 @@ import com.github.motoki317.traq4j.model.ChannelTopic;
 import com.github.motoki317.traq4j.model.ChannelViewer;
 import com.github.motoki317.traq4j.model.DMChannel;
 import com.github.motoki317.traq4j.model.Message;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
 import com.github.motoki317.traq4j.model.PatchChannelRequest;
 import com.github.motoki317.traq4j.model.PatchChannelSubscribersRequest;
 import com.github.motoki317.traq4j.model.Pin;
@@ -32,8 +32,8 @@ import com.github.motoki317.traq4j.model.PostMessageRequest;
 import com.github.motoki317.traq4j.model.PutChannelSubscribersRequest;
 import com.github.motoki317.traq4j.model.PutChannelTopicRequest;
 import java.util.UUID;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,118 +43,104 @@ import java.util.Map;
 /**
  * API tests for ChannelApi
  */
-@Ignore
+@Disabled
 public class ChannelApiTest {
 
     private final ChannelApi api = new ChannelApi();
 
-    
     /**
      * チャンネルを作成
      *
      * チャンネルを作成します。 階層が6以上になるチャンネルは作成できません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createChannelTest() throws ApiException {
         PostChannelRequest postChannelRequest = null;
         Channel response = api.createChannel(postChannelRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネル情報を変更
      *
      * 指定したチャンネルの情報を変更します。 変更には権限が必要です。 ルートチャンネルに移動させる場合は、&#x60;parent&#x60;に&#x60;00000000-0000-0000-0000-000000000000&#x60;を指定してください。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editChannelTest() throws ApiException {
         UUID channelId = null;
         PatchChannelRequest patchChannelRequest = null;
         api.editChannel(channelId, patchChannelRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルの通知購読者を編集
      *
      * 指定したチャンネルの通知購読者を編集します。 リクエストに含めなかったユーザーの通知購読状態は変更しません。 また、存在しないユーザーを指定した場合は無視されます。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editChannelSubscribersTest() throws ApiException {
         UUID channelId = null;
         PatchChannelSubscribersRequest patchChannelSubscribersRequest = null;
         api.editChannelSubscribers(channelId, patchChannelSubscribersRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルトピックを編集
      *
      * 指定したチャンネルのトピックを編集します。 アーカイブされているチャンネルのトピックは編集できません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editChannelTopicTest() throws ApiException {
         UUID channelId = null;
         PutChannelTopicRequest putChannelTopicRequest = null;
         api.editChannelTopic(channelId, putChannelTopicRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネル情報を取得
      *
      * 指定したチャンネルの情報を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getChannelTest() throws ApiException {
         UUID channelId = null;
         Channel response = api.getChannel(channelId);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネル参加中のBOTのリストを取得
      *
      * 指定したチャンネルに参加しているBOTのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getChannelBotsTest() throws ApiException {
         UUID channelId = null;
         List<BotUser> response = api.getChannelBots(channelId);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルイベントのリストを取得
      *
      * 指定したチャンネルのイベントリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getChannelEventsTest() throws ApiException {
@@ -166,113 +152,99 @@ public class ChannelApiTest {
         Boolean inclusive = null;
         String order = null;
         List<ChannelEvent> response = api.getChannelEvents(channelId, limit, offset, since, until, inclusive, order);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルピンのリストを取得
      *
      * 指定したチャンネルにピン留めされているピンメッセージのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getChannelPinsTest() throws ApiException {
         UUID channelId = null;
         List<Pin> response = api.getChannelPins(channelId);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネル統計情報を取得
      *
      * 指定したチャンネルの統計情報を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getChannelStatsTest() throws ApiException {
         UUID channelId = null;
         ChannelStats response = api.getChannelStats(channelId);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルの通知購読者のリストを取得
      *
      * 指定したチャンネルを通知購読しているユーザーのUUIDのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getChannelSubscribersTest() throws ApiException {
         UUID channelId = null;
         List<UUID> response = api.getChannelSubscribers(channelId);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルトピックを取得
      *
      * 指定したチャンネルのトピックを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getChannelTopicTest() throws ApiException {
         UUID channelId = null;
         ChannelTopic response = api.getChannelTopic(channelId);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネル閲覧者リストを取得
      *
      * 指定したチャンネルの閲覧者のリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getChannelViewersTest() throws ApiException {
         UUID channelId = null;
         List<ChannelViewer> response = api.getChannelViewers(channelId);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルリストを取得
      *
      * チャンネルのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getChannelsTest() throws ApiException {
         Boolean includeDm = null;
         ChannelList response = api.getChannels(includeDm);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルメッセージのリストを取得
      *
      * 指定したチャンネルのメッセージのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMessagesTest() throws ApiException {
@@ -284,58 +256,51 @@ public class ChannelApiTest {
         Boolean inclusive = null;
         String order = null;
         List<Message> response = api.getMessages(channelId, limit, offset, since, until, inclusive, order);
-
         // TODO: test validations
     }
-    
+
     /**
      * DMチャンネル情報を取得
      *
      * 指定したユーザーとのダイレクトメッセージチャンネルの情報を返します。 ダイレクトメッセージチャンネルが存在しなかった場合、自動的に作成されます。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUserDMChannelTest() throws ApiException {
         String userId = null;
         DMChannel response = api.getUserDMChannel(userId);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルにメッセージを投稿
      *
      * 指定したチャンネルにメッセージを投稿します。 embedをtrueに指定すると、メッセージ埋め込みが自動で行われます。 アーカイブされているチャンネルに投稿することはできません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void postMessageTest() throws ApiException {
         UUID channelId = null;
         PostMessageRequest postMessageRequest = null;
         Message response = api.postMessage(channelId, postMessageRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * チャンネルの通知購読者を設定
      *
      * 指定したチャンネルの通知購読者を設定します。 リクエストに含めなかったユーザーの通知購読状態はオフになります。 また、存在しないユーザーを指定した場合は無視されます。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void setChannelSubscribersTest() throws ApiException {
         UUID channelId = null;
         PutChannelSubscribersRequest putChannelSubscribersRequest = null;
         api.setChannelSubscribers(channelId, putChannelSubscribersRequest);
-
         // TODO: test validations
     }
-    
+
 }

@@ -15,8 +15,8 @@ package com.github.motoki317.traq4j.api;
 
 import com.github.motoki317.traq4j.ApiException;
 import com.github.motoki317.traq4j.model.ActivityTimelineMessage;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,19 +26,17 @@ import java.util.Map;
 /**
  * API tests for ActivityApi
  */
-@Ignore
+@Disabled
 public class ActivityApiTest {
 
     private final ActivityApi api = new ActivityApi();
 
-    
     /**
      * アクテビティタイムラインを取得
      *
      * パブリックチャンネルの直近の投稿メッセージを作成日時の降順で取得します。 &#x60;all&#x60;が&#x60;true&#x60;でない場合、購読チャンネルのみのタイムラインを取得します
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getActivityTimelineTest() throws ApiException {
@@ -46,23 +44,20 @@ public class ActivityApiTest {
         Boolean all = null;
         Boolean perChannel = null;
         List<ActivityTimelineMessage> response = api.getActivityTimeline(limit, all, perChannel);
-
         // TODO: test validations
     }
-    
+
     /**
      * オンラインユーザーリストを取得
      *
      * 現在オンラインな(SSEまたはWSが接続中)ユーザーのUUIDのリストを返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getOnlineUsersTest() throws ApiException {
         List<String> response = api.getOnlineUsers();
-
         // TODO: test validations
     }
-    
+
 }

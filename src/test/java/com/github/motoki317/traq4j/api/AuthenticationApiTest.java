@@ -21,8 +21,8 @@ import com.github.motoki317.traq4j.model.PostLoginRequest;
 import com.github.motoki317.traq4j.model.PostUnlinkExternalAccount;
 import java.net.URI;
 import java.util.UUID;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,122 +32,107 @@ import java.util.Map;
 /**
  * API tests for AuthenticationApi
  */
-@Ignore
+@Disabled
 public class AuthenticationApiTest {
 
     private final AuthenticationApi api = new AuthenticationApi();
 
-    
     /**
      * 外部ログインアカウント一覧を取得
      *
      * 自分に紐付けられている外部ログインアカウント一覧を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMyExternalAccountsTest() throws ApiException {
         List<ExternalProviderUser> response = api.getMyExternalAccounts();
-
         // TODO: test validations
     }
-    
+
     /**
      * 自分のログインセッションリストを取得
      *
      * 自分のログインセッションのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getMySessionsTest() throws ApiException {
         List<LoginSession> response = api.getMySessions();
-
         // TODO: test validations
     }
-    
+
     /**
      * 外部ログインアカウントを紐付ける
      *
      * 自分に外部ログインアカウントを紐付けます。 指定した&#x60;providerName&#x60;がサーバー側で有効である必要があります。 リクエストが受理された場合、外部サービスの認証画面にリダイレクトされ、認証される必要があります。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void linkExternalAccountTest() throws ApiException {
         PostLinkExternalAccount postLinkExternalAccount = null;
         api.linkExternalAccount(postLinkExternalAccount);
-
         // TODO: test validations
     }
-    
+
     /**
      * ログイン
      *
      * ログインします。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void loginTest() throws ApiException {
         URI redirect = null;
         PostLoginRequest postLoginRequest = null;
         api.login(redirect, postLoginRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * ログアウト
      *
      * ログアウトします。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void logoutTest() throws ApiException {
         URI redirect = null;
         Boolean all = null;
         api.logout(redirect, all);
-
         // TODO: test validations
     }
-    
+
     /**
      * セッションを無効化
      *
      * 指定した自分のセッションを無効化(ログアウト)します。 既に存在しない・無効化されているセッションを指定した場合も&#x60;204&#x60;を返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void revokeMySessionTest() throws ApiException {
         UUID sessionId = null;
         api.revokeMySession(sessionId);
-
         // TODO: test validations
     }
-    
+
     /**
      * 外部ログインアカウントの紐付けを解除
      *
      * 自分に紐付けられている外部ログインアカウントの紐付けを解除します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void unlinkExternalAccountTest() throws ApiException {
         PostUnlinkExternalAccount postUnlinkExternalAccount = null;
         api.unlinkExternalAccount(postUnlinkExternalAccount);
-
         // TODO: test validations
     }
-    
+
 }

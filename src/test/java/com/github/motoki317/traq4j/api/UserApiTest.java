@@ -17,7 +17,7 @@ import com.github.motoki317.traq4j.ApiException;
 import com.github.motoki317.traq4j.model.DMChannel;
 import java.io.File;
 import com.github.motoki317.traq4j.model.Message;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
 import com.github.motoki317.traq4j.model.PatchUserRequest;
 import com.github.motoki317.traq4j.model.PatchUserTagRequest;
 import com.github.motoki317.traq4j.model.PostMessageRequest;
@@ -27,9 +27,10 @@ import com.github.motoki317.traq4j.model.PutUserPasswordRequest;
 import java.util.UUID;
 import com.github.motoki317.traq4j.model.User;
 import com.github.motoki317.traq4j.model.UserDetail;
+import com.github.motoki317.traq4j.model.UserStats;
 import com.github.motoki317.traq4j.model.UserTag;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,103 +40,91 @@ import java.util.Map;
 /**
  * API tests for UserApi
  */
-@Ignore
+@Disabled
 public class UserApiTest {
 
     private final UserApi api = new UserApi();
 
-    
     /**
      * ユーザーにタグを追加
      *
      * 指定したユーザーに指定したタグを追加します。 Webhookユーザーにタグを追加することは出来ません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void addUserTagTest() throws ApiException {
         UUID userId = null;
         PostUserTagRequest postUserTagRequest = null;
         UserTag response = api.addUserTag(userId, postUserTagRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーのアイコン画像を変更します
      *
      * 指定したユーザーのアイコン画像を変更します。 管理者権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void changeUserIconTest() throws ApiException {
         UUID userId = null;
-        File file = null;
-        api.changeUserIcon(userId, file);
-
+        File _file = null;
+        api.changeUserIcon(userId, _file);
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーのパスワードを変更
      *
      * 指定したユーザーのパスワードを変更します。 管理者権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void changeUserPasswordTest() throws ApiException {
         UUID userId = null;
         PutUserPasswordRequest putUserPasswordRequest = null;
         api.changeUserPassword(userId, putUserPasswordRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーを登録
      *
      * ユーザーを登録します。 管理者権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createUserTest() throws ApiException {
         PostUserRequest postUserRequest = null;
         UserDetail response = api.createUser(postUserRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザー情報を変更
      *
      * 指定したユーザーの情報を変更します。 管理者権限が必要です。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editUserTest() throws ApiException {
         UUID userId = null;
         PatchUserRequest patchUserRequest = null;
         api.editUser(userId, patchUserRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーのタグを編集
      *
      * 指定したユーザーの指定したタグの状態を変更します。 他人の状態は変更できません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void editUserTagTest() throws ApiException {
@@ -143,17 +132,15 @@ public class UserApiTest {
         UUID tagId = null;
         PatchUserTagRequest patchUserTagRequest = null;
         api.editUserTag(userId, tagId, patchUserTagRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * ダイレクトメッセージのリストを取得
      *
      * 指定したユーザーとのダイレクトメッセージのリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getDirectMessagesTest() throws ApiException {
@@ -165,123 +152,122 @@ public class UserApiTest {
         Boolean inclusive = null;
         String order = null;
         List<Message> response = api.getDirectMessages(userId, limit, offset, since, until, inclusive, order);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザー詳細情報を取得
      *
      * 指定したユーザーの詳細情報を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUserTest() throws ApiException {
         UUID userId = null;
         UserDetail response = api.getUser(userId);
-
         // TODO: test validations
     }
-    
+
     /**
      * DMチャンネル情報を取得
      *
      * 指定したユーザーとのダイレクトメッセージチャンネルの情報を返します。 ダイレクトメッセージチャンネルが存在しなかった場合、自動的に作成されます。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUserDMChannelTest() throws ApiException {
         String userId = null;
         DMChannel response = api.getUserDMChannel(userId);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーのアイコン画像を取得
      *
      * 指定したユーザーのアイコン画像を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUserIconTest() throws ApiException {
         UUID userId = null;
         File response = api.getUserIcon(userId);
-
         // TODO: test validations
     }
-    
+
+    /**
+     * ユーザー統計情報を取得
+     *
+     * 指定したユーザーの統計情報を取得します。
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getUserStatsTest() throws ApiException {
+        UUID userId = null;
+        UserStats response = api.getUserStats(userId);
+        // TODO: test validations
+    }
+
     /**
      * ユーザーのタグリストを取得
      *
      * 指定したユーザーのタグリストを取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUserTagsTest() throws ApiException {
         UUID userId = null;
         List<UserTag> response = api.getUserTags(userId);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーのリストを取得
      *
-     * ユーザーのリストを取得します。 &#x60;include-suspended&#x60;を指定しない場合、レスポンスに非アクティブユーザーは含まれません。 &#x60;include-suspended&#x60;と&#x60;name&#x60;を同時に指定することはできません。
+     * ユーザーのリストを取得します。 &#x60;include-suspended&#x60;を指定しない場合、レスポンスにはユーザーアカウント状態が\&quot;1: 有効\&quot;であるユーザーのみが含まれます。 &#x60;include-suspended&#x60;と&#x60;name&#x60;を同時に指定することはできません。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUsersTest() throws ApiException {
         Boolean includeSuspended = null;
         String name = null;
         List<User> response = api.getUsers(includeSuspended, name);
-
         // TODO: test validations
     }
-    
+
     /**
      * ダイレクトメッセージを送信
      *
      * 指定したユーザーにダイレクトメッセージを送信します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void postDirectMessageTest() throws ApiException {
         UUID userId = null;
         PostMessageRequest postMessageRequest = null;
         Message response = api.postDirectMessage(userId, postMessageRequest);
-
         // TODO: test validations
     }
-    
+
     /**
      * ユーザーからタグを削除します
      *
      * 既に存在しないタグを削除しようとした場合は204を返します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void removeUserTagTest() throws ApiException {
         UUID userId = null;
         UUID tagId = null;
         api.removeUserTag(userId, tagId);
-
         // TODO: test validations
     }
-    
+
 }

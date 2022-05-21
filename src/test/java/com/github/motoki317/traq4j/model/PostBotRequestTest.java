@@ -13,6 +13,7 @@
 
 package com.github.motoki317.traq4j.model;
 
+import com.github.motoki317.traq4j.model.BotMode;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,9 +23,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.net.URI;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -63,6 +63,14 @@ public class PostBotRequestTest {
     @Test
     public void descriptionTest() {
         // TODO: test description
+    }
+
+    /**
+     * Test the property 'mode'
+     */
+    @Test
+    public void modeTest() {
+        // TODO: test mode
     }
 
     /**

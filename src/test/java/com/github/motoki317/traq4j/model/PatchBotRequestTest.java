@@ -13,6 +13,7 @@
 
 package com.github.motoki317.traq4j.model;
 
+import com.github.motoki317.traq4j.model.BotMode;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,9 +26,8 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -66,6 +66,14 @@ public class PatchBotRequestTest {
     @Test
     public void privilegedTest() {
         // TODO: test privileged
+    }
+
+    /**
+     * Test the property 'mode'
+     */
+    @Test
+    public void modeTest() {
+        // TODO: test mode
     }
 
     /**

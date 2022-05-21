@@ -21,31 +21,39 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import java.util.UUID;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
- * Model tests for PostOAuth2Revoke
+ * Model tests for ChannelStatsUser
  */
-public class PostOAuth2RevokeTest {
-    private final PostOAuth2Revoke model = new PostOAuth2Revoke();
+public class ChannelStatsUserTest {
+    private final ChannelStatsUser model = new ChannelStatsUser();
 
     /**
-     * Model tests for PostOAuth2Revoke
+     * Model tests for ChannelStatsUser
      */
     @Test
-    public void testPostOAuth2Revoke() {
-        // TODO: test PostOAuth2Revoke
+    public void testChannelStatsUser() {
+        // TODO: test ChannelStatsUser
     }
 
     /**
-     * Test the property 'token'
+     * Test the property 'id'
      */
     @Test
-    public void tokenTest() {
-        // TODO: test token
+    public void idTest() {
+        // TODO: test id
+    }
+
+    /**
+     * Test the property 'messageCount'
+     */
+    @Test
+    public void messageCountTest() {
+        // TODO: test messageCount
     }
 
 }

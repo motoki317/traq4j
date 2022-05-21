@@ -17,8 +17,8 @@ import com.github.motoki317.traq4j.ApiException;
 import com.github.motoki317.traq4j.model.PostWebRTCAuthenticateRequest;
 import com.github.motoki317.traq4j.model.WebRTCAuthenticateResult;
 import com.github.motoki317.traq4j.model.WebRTCUserState;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,41 +28,36 @@ import java.util.Map;
 /**
  * API tests for WebrtcApi
  */
-@Ignore
+@Disabled
 public class WebrtcApiTest {
 
     private final WebrtcApi api = new WebrtcApi();
 
-    
     /**
      * WebRTC状態を取得
      *
      * 現在のWebRTC状態を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getWebRTCStateTest() throws ApiException {
         List<WebRTCUserState> response = api.getWebRTCState();
-
         // TODO: test validations
     }
-    
+
     /**
      * Skyway用認証API
      *
      * Skyway WebRTC用の認証API
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void postWebRTCAuthenticateTest() throws ApiException {
         PostWebRTCAuthenticateRequest postWebRTCAuthenticateRequest = null;
         WebRTCAuthenticateResult response = api.postWebRTCAuthenticate(postWebRTCAuthenticateRequest);
-
         // TODO: test validations
     }
-    
+
 }

@@ -15,8 +15,8 @@ package com.github.motoki317.traq4j.api;
 
 import com.github.motoki317.traq4j.ApiException;
 import com.github.motoki317.traq4j.model.Ogp;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,28 +24,25 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for DefaultApi
+ * API tests for OgpApi
  */
-@Ignore
-public class DefaultApiTest {
+@Disabled
+public class OgpApiTest {
 
-    private final DefaultApi api = new DefaultApi();
+    private final OgpApi api = new OgpApi();
 
-    
     /**
      * OGP情報を取得
      *
      * OGP情報を取得します。
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getOgpTest() throws ApiException {
         String url = null;
         Ogp response = api.getOgp(url);
-
         // TODO: test validations
     }
-    
+
 }
