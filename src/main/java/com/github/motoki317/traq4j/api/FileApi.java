@@ -22,6 +22,7 @@ import com.github.motoki317.traq4j.Pair;
 import com.github.motoki317.traq4j.ProgressRequestBody;
 import com.github.motoki317.traq4j.ProgressResponseBody;
 
+import com.github.motoki317.traq4j.model.ThumbnailType;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;

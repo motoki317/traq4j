@@ -18,6 +18,8 @@ import java.io.File;
 import com.github.motoki317.traq4j.model.FileInfo;
 import java.time.OffsetDateTime;
 import java.util.UUID;
+
+import com.github.motoki317.traq4j.model.ThumbnailType;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
